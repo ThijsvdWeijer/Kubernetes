@@ -9,6 +9,8 @@ spec:
     repoURL: https://github.com/ThijsvdWeijer/Kubernetes
     targetRevision: HEAD
     path: apps/media
+  directory:
+    recure: ture
   destination:
     server: https://kubernetes.default.svc
     namespace: media
