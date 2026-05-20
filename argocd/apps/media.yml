@@ -10,7 +10,7 @@ spec:
     targetRevision: HEAD
     path: apps/media
   directory:
-    recure: ture
+    recurse: ture
   destination:
     server: https://kubernetes.default.svc
     namespace: media
