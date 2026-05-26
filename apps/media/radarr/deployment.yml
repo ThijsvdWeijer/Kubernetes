@@ -43,4 +43,4 @@ spec:
         - name: movies
           nfs:
             server: 192.168.178.59
-            path: /mnt/Storage_new/jellyfin/movies
+            path: /mnt/Storage_new/jellyfin/jellyfin/movies
