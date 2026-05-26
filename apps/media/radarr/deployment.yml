@@ -14,7 +14,7 @@ spec:
         app: radarr
     spec:
       containers:
-	- name: radarr
+        - name: radarr
           image: lscr.io/linuxserver/radarr:latest
 	  ports:
 	    -  containerPort: 7878
