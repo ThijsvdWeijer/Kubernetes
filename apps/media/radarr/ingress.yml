@@ -11,11 +11,11 @@ spec:
       kind: Rule
       services:
         - name: radarr
-	  port: 7878
+          port: 7878
 ---
-apiVersion: treafik.io/v1alpha1
+apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
-metadata: 
+metadata:
   name: radarr-https
   namespace: media
 spec:
@@ -25,7 +25,7 @@ spec:
     - match: Host(`radarr.thijsvdweijer.nl`)
       kind: Rule
       services:
-        - name: radarr 
+        - name: radarr
           port: 7878
   tls:
     secretName: radarr-tls
@@ -42,6 +42,3 @@ spec:
     kind: ClusterIssuer
   dnsNames:
     - radarr.thijsvdweijer.nl
-
-
-
