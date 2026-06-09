@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jellyseerr
+  name: jellyseer
   namespace: media
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: jellyseerr
+      app: jellyseer
   template:
     metadata:
       labels:
-        app: jellyseerr
+        app: jellyseer
     spec:
       containers:
-        - name: jellyseerr
-          image: fallenbagel/jellyseerr:latest
+        - name: jellyseer
+          image: fallenbagel/jellyseer:latest
           ports:
             - containerPort: 5055
           env:
@@ -29,4 +29,4 @@ spec:
       volumes:
         - name: config
           persistentVolumeClaim:
-            claimName: jellyseerr-config
+            claimName: jellyseer-config

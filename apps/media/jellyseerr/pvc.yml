@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: jellyseerr-config
+  name: jellyseer-config
   namespace: media
 spec:
   storageClassName: nfs-downloads
