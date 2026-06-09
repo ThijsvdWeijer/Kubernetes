@@ -1,0 +1,44 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: jellyseerr-http
+  namespace: media
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`jellyseerr.thijsvdweijer.nl`)
+      kind: Rule
+      services:
+        - name: jellyseerr
+          port: 5055
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: jellyseerr-https
+  namespace: media
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`jellyseerr.thijsvdweijer.nl`)
+      kind: Rule
+      services:
+        - name: jellyseerr
+          port: 5055
+  tls:
+    secretName: jellyseerr-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: jellyseerr-tls
+  namespace: media
+spec:
+  secretName: jellyseerr-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+    - jellyseerr.thijsvdweijer.nl
