@@ -42,7 +42,7 @@ spec:
               revision: 37
               datasource: Prometheus
             kubernetes-overview:
-              gnetId: 15760
+              gnetId: 13770
               revision: 1
               datasource: Prometheus
             k8s-rke-cluster:
