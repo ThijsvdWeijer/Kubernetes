@@ -25,15 +25,11 @@ spec:
               value: "0"
             - name: TZ
               value: "Europe/Amsterdam"
-          volumeMounts:
+	  volumeMounts:
             - name: config
               mountPath: /config
             - name: media
-              mountPath: /movies
-              subPath: movies
-            - name: media
-              mountPath: /tv
-              subPath: series
+              mountPath: /media
       volumes:
         - name: config
           persistentVolumeClaim:
