@@ -1,0 +1,44 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sonarr-http
+  namespace: media
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`sonarr.thijsvdweijer.nl`)
+      kind: Rule
+      services:
+        - name: sonarr
+          port: 8989
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: sonarr-https
+  namespace: media
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`sonarr.thijsvdweijer.nl`)
+      kind: Rule
+      services:
+        - name: sonarr
+          port: 8989
+  tls:
+    secretName: sonarr-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sonarr-tls
+  namespace: media
+spec:
+  secretName: sonarr-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  dnsNames:
+    - sonarr.thijsvdweijer.nl
