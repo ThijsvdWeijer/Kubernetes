@@ -20,22 +20,9 @@ spec:
             size: 5Gi
         prometheus:
           prometheusSpec:
-            storageSpec:
-              volumeClaimTemplate:
-                spec:
-                  storageClassName: nfs-downloads
-                  resources:
-                    requests:
-                      storage: 10Gi
+            retention: 15d
         alertmanager:
-          alertmanagerSpec:
-            storage:
-              volumeClaimTemplate:
-                spec:
-                  storageClassName: nfs-downloads
-                  resources:
-                    requests:
-                      storage: 2Gi
+          enabled: false
   destination:
     server: https://kubernetes.default.svc
     namespace: monitoring
