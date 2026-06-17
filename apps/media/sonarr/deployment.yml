@@ -43,4 +43,4 @@ spec:
         - name: series
           nfs:
             server: 192.168.178.59
-            path: /mnt/Storage_new/jellyfin/jellyfin/serries
+            path: /mnt/Storage_new/jellyfin/jellyfin/series
