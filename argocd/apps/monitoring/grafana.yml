@@ -24,7 +24,7 @@ spec:
                 url: http://monitoring-prometheus-server.monitoring.svc.cluster.local
                 isDefault: true
         dashboardProviders:
-       	  dashboardproviders.yaml:
+          dashboardproviders.yaml:
             apiVersion: 1
             providers:
               - name: default
