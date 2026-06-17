@@ -37,16 +37,12 @@ spec:
                   path: /var/lib/grafana/dashboards/default
         dashboards:
           default:
-            kubernetes-cluster:
-              gnetId: 7249
-              revision: 1
-              datasource: Prometheus
             node-exporter:
               gnetId: 1860
               revision: 37
               datasource: Prometheus
-            kubernetes-pods:
-              gnetId: 6417
+            kubernetes-overview:
+              gnetId: 15760
               revision: 1
               datasource: Prometheus
             k8s-rke-cluster:
