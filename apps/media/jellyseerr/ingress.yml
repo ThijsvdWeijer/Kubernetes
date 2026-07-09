@@ -27,6 +27,8 @@ spec:
       services:
         - name: jellyseer
           port: 5055
+      middlewares:
+        - name: jellyseerr-frame-headers 
   tls:
     secretName: jellyseer-tls
 ---
