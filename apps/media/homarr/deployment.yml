@@ -21,6 +21,11 @@ spec:
           env:
             - name: TZ
               value: "Europe/Amsterdam"
+            - name: SECRET_ENCRYPTION_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: homarr-secrets
+                  key: SECRET_ENCRYPTION_KEY
           volumeMounts:
             - name: config
               mountPath: /appdata
