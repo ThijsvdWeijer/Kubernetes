@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: jellyseer
-          image: fallenbagel/seerr:latest
+          image: seerr-team/seerr
           ports:
             - containerPort: 5055
           env:
